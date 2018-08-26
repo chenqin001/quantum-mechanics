@@ -30,9 +30,6 @@ phasor2=arrow(pos=phasor1.axis,axis=vec(a*cos(delta_phi),a*sin(delta_phi),0),col
 phasor3=arrow(pos=phasor2.axis+phasor1.axis,axis=vec(a*cos(2*delta_phi),a*sin(2*delta_phi),0),color=color.blue)
 phasor_sum=arrow(pos=vec(0,0,0),axis=phasor1.axis+phasor2.axis+phasor3.axis,color=color.white)
 
-
-# In[ ]:
-
 omega=0.1
 dt=1
 while True:
