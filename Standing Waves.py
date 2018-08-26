@@ -70,12 +70,4 @@ plt.grid(True)
 plt.ylim(-2,2)
 
 
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
 
