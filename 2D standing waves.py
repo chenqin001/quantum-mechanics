@@ -54,11 +54,5 @@ def main():
     plt.show()
     
             
-        
-
-
-# In[8]:
-
-
-main()
+   
 
