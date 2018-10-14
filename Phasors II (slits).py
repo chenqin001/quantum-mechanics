@@ -1,29 +1,18 @@
 
-# coding: utf-8
-
-# In[1]:
 
 from vpython import *
 
-
-# In[2]:
-
 from math import *
 
-
-# In[3]:
 
 xaxis=curve(vec(-5,0,0),vec(5,0,0))
 yaxis=curve(vec(0,-5,0),vec(0,5,0))
 
 
-# In[4]:
 
 a=2
 delta_phi=0
 
-
-# In[5]:
 
 phasor1=arrow(pos=vec(0,0,0),axis=vec(2,0,0),color=color.green)
 phasor2=arrow(pos=phasor1.axis,axis=vec(a*cos(delta_phi),a*sin(delta_phi),0),color=color.red)
