@@ -1,10 +1,4 @@
 
-# coding: utf-8
-
-# #### 2D 
-
-# In[1]:
-
 
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -15,8 +9,6 @@ import scipy as sp
 get_ipython().magic('matplotlib notebook')
 
 
-# In[2]:
-
 
 L=3
 xs = np.arange(0, L, 0.01)
@@ -24,14 +16,9 @@ ys = np.arange(0, L, 0.01)
 X, Y = np.meshgrid(xs, ys) 
 
 
-# In[3]:
-
-
 def psiPIB(n,x,m,y):
     return (2/L)*np.sin(sp.pi*x*n/L)*np.sin(sp.pi*y*m/L)
 
-
-# In[4]:
 
 
 def main():
