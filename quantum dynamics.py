@@ -1,13 +1,4 @@
 
-# coding: utf-8
-
-# ## Function animator
-
-# #### Imports and ML customizations
-
-# In[2]:
-
-
 from vpython import *
 import scipy as sp
 
@@ -29,10 +20,6 @@ from scipy import misc
 
 
 # #### linear combination of particle-in-a-box states
-# 
-
-# In[3]:
-
 
 x=sp.linspace(0,1,201)
 v=1
@@ -47,22 +34,14 @@ t=0
 def func(x,t):                          
     return A*sp.sin(sp.pi*2*x/lamda)*cos(omega*t)
 
-
-# In[4]:
-
-
 def psiPIB(n,x):
     return sp.sqrt(2.0)*sp.sin(n*sp.pi*x)
 
-
-# In[5]:
 
 
 def psiTotal(x,t):
     return (sp.exp(-1j*1*t)*psiPIB(1,x)+sp.exp(-1j*4.0*t)*psiPIB(2,x))/sp.sqrt(2.0)
 
-
-# In[6]:
 
 
 def animate(i):
@@ -73,9 +52,6 @@ def animate(i):
     plt.title("t={0:.2f}".format(t)) 
     line.set_ydata(psiTotal(x,t))  # update the data
     return line,
-
-
-# In[7]:
 
 
 N = 201                               # Number of points to plot
@@ -93,8 +69,6 @@ x = sp.linspace(0, 1, N)   # choose density of points based on mode number
 line, = plt.plot(x, psiTotal(x,t))
 
 
-# In[8]:
-
 
 ani = animation.FuncAnimation(fig, animate, interval = 2000)   # interval --> time between frames
 plt.show()
@@ -102,21 +76,16 @@ plt.show()
 
 # #### linear combination of harmonic oscillator states 1 (shut down the previous diagram!!!)
 
-# In[13]:
 
 
 def psiHO(n,x):
     return sp.special.eval_hermite(n,x)*sp.exp(-x**2/2.0)/sp.sqrt(2**n*special.factorial(n)*sp.sqrt(sp.pi))
 
 
-# In[14]:
-
 
 def psiTotal1(x,t):
     return (sp.exp(-1j*0.5*t)*psiHO(0,x)+sp.exp(-1j*1.5*t)*psiHO(1,x))/sp.sqrt(2.0)
 
-
-# In[15]:
 
 
 def animate(i):
@@ -128,8 +97,6 @@ def animate(i):
     line.set_ydata(abs(psiTotal1(x,t))**2)  # update the data
     return line,
 
-
-# In[16]:
 
 
 N = 201                               # Number of points to plot
@@ -147,8 +114,6 @@ plt.axhline(0,color='green')       # Makes solid green x-axis
 line, = plt.plot(x, abs(psiTotal1(x,t))**2)
 
 
-# In[17]:
-
 
 ani = animation.FuncAnimation(fig, animate, interval = 200)   # interval --> time between frames
 plt.show()
@@ -156,7 +121,6 @@ plt.show()
 
 # #### linear combination of harmonic osillator states 2 (classical)  (shut down the previous diagram!!!)
 
-# In[19]:
 
 
 def psiTotal2(x,t):
@@ -168,8 +132,6 @@ def psiTotal2(x,t):
     return sp.exp(-alpha**2/2)*total
 
 
-# In[23]:
-
 
 def animate(i):
     '''Animation function: Updates time, title (containing time), and data'''    
@@ -179,9 +141,6 @@ def animate(i):
     plt.title("t={0:.2f}".format(t)) 
     line.set_ydata(abs(psiTotal2(x,t))**2)  # update the data
     return line,
-
-
-# In[28]:
 
 
 N = 201                               # Number of points to plot
@@ -197,9 +156,6 @@ plt.axhline(0,color='green')       # Makes solid green x-axis
 
 
 line, = plt.plot(x, abs(psiTotal2(x,t))**2)
-
-
-# In[29]:
 
 
 ani = animation.FuncAnimation(fig, animate, interval = 400)   # interval --> time between frames
