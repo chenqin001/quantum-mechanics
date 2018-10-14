@@ -1,8 +1,4 @@
 
-# coding: utf-8
-
-# In[1]:
-
 
 from vpython import *
 import scipy as sp
@@ -12,29 +8,20 @@ import matplotlib.animation as animation
 get_ipython().magic('matplotlib notebook')
 
 
-# In[2]:
-
-
 lep=0
 rep=1
 np=101
 x=sp.linspace(lep,rep,np)
 
 
-# In[3]:
-
 
 def u(x):
     return 0
 
 
-# In[4]:
-
 
 dx=(rep-lep)/(np-1)
 
-
-# In[5]:
 
 
 def integrate(x):
@@ -44,9 +31,6 @@ def integrate(x):
     for i in range(1,np-1):
         y[i+1]=2*y[i]-y[i-1]+dx**2*(-sp.pi**2*((e-u(x))*y[i]))
     return y
-
-
-# In[6]:
 
 
 plt.figure()
